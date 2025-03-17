@@ -25,6 +25,11 @@
 3. Outdoor exercise  
     1. Hiking
     2. Camping
+
+## Here is some Link help for study:
+[Github Docs](https://docs.github.com/en)
+[R Studio Help](https://www.r-project.org/help.html)
+
   
 ## A meme that captures how I currently feel about my university studies is 
 ![](https://media1.tenor.com/m/dTP4cRnO9bEAAAAC/sweating-nervous.gif)
