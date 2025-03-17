@@ -9,11 +9,11 @@
 <h3>- I am interested in learning about R studio.</h3>
 
 <h2>I would love to share some of my hobbies:</h2>
-<h3>1. savor food /n
-    1. Macdonal's
-    2. Thai Curry
-    3. Pizza
-    2. Outdoor exercise
+<h3>1. savor food  
+    1. Macdonal's  
+    2. Thai Curry  
+    3. Pizza  
+    2. Outdoor exercise  
     1. Hiking
     2. Camping
   
