@@ -9,3 +9,5 @@ A little about me:
 - I am interested in learning about R studio.
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)# stats220
+
+![](https://tenor.com/en-NZ/view/sweating-nervous-paranoid-gif-4974019)
