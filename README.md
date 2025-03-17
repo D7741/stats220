@@ -8,6 +8,5 @@ A little about me:
 - I am taking STATS 220 because I am looking for a course to catch up with my R studio.
 - I am interested in learning about R studio.
 
-A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)# stats220
+A meme that captures how I currently feel about my university studies is ![](https://media1.tenor.com/m/dTP4cRnO9bEAAAAC/sweating-nervous.gif)# stats220
 
-![](https://media1.tenor.com/m/dTP4cRnO9bEAAAAC/sweating-nervous.gif)
