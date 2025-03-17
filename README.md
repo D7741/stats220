@@ -27,7 +27,7 @@
     2. Camping
 
 ## Here is some Link help for study:
-[Github Docs](https://docs.github.com/en)
+[Github Docs](https://docs.github.com/en)  
 [R Studio Help](https://www.r-project.org/help.html)
 
   
