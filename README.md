@@ -2,7 +2,7 @@
 
 This is my repo for STATS 220. 
 
-A little about me:
+<h1>A little about me</h1>:
 
 - I am undertaking a degree in Compsci.
 - I am taking STATS 220 because I am looking for a course to catch up with my R studio.
