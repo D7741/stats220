@@ -11,10 +11,17 @@
 ## I would love to share some of my hobbies:
 1. savor food
     1. Macdonal's
-       1. Big Mac
-       2. Cheese Buger  
-    3. Thai Curry  
-    4. Pizza  
+       1. The Boss
+       2. Quarter Burger
+       3. Big Mac
+       4. Cheese Burger  
+    2. Thai Food
+       1. Green Curry
+       2. Red Curry
+       3. Tong Yang Soup
+    3. Pizza
+        1. Hawaii Pizza
+        2. BBQ Pizza
 3. Outdoor exercise  
     1. Hiking
     2. Camping
