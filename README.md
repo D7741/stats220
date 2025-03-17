@@ -10,9 +10,11 @@
 
 ## I would love to share some of my hobbies:
 1. savor food
-    1. Macdonal's  
-    2. Thai Curry  
-    3. Pizza  
+    1. Macdonal's
+       1. Big Mac
+       2. Cheese Buger  
+    3. Thai Curry  
+    4. Pizza  
 3. Outdoor exercise  
     1. Hiking
     2. Camping
