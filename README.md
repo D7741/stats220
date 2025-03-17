@@ -10,4 +10,4 @@ A little about me:
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)# stats220
 
-![](https://tenor.com/en-NZ/view/sweating-nervous-paranoid-gif-4974019)
+![](https://media1.tenor.com/m/dTP4cRnO9bEAAAAC/sweating-nervous.gif)
