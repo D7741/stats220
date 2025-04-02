@@ -1,0 +1,198 @@
+---
+title: "Project2"
+author: "Pengyu Liu"
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+library(magick)
+library(tidyverse)
+```
+
+```{css}
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Rakkas&family=Rubik+Scribble&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Rakkas&family=Rubik+Scribble&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 400;
+    color: 		#ffff00;
+    background-color: #ffc0cb;
+}
+
+h2, h3 {
+  color: #2c3e50;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+body{
+  font-family: "Rubik", sans-serif;
+  color: 		#000000;
+  background-color: #ffc0cb;
+}
+
+p {
+  color: #34495e; 
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+```
+
+## Public Transport Device Usage Observation
+
+# Quick intro of my Google Form.
+For Project 2, I'm investigating device usage observation when people take public transport. To understand people's usage distribution during public transport, my form followed one of the strict guidelines for designing a form: clearly communicating your purpose. The title of my form states the survey's purpose clearly. Since forms used to collect research data require ethical approval, information about ethics is presented at the beginning. I clearly explained the form's purpose, my data collection methods, and how the research data would be used in the introduction. I also indicated that personal information would be collected but kept private and secure by making the form anonymous.
+
+In my Google Form, I included two basic questions and three main questions. The first basic question was "**Do you wear headphones when taking public transport?**" This yes/no *multiple-choice question* helps respondents ease into the form while visualizing themselves on public transport. The main questions were: "**Which devices do you typically use while on public transport?**", "**What is your primary activity on the device during transport?**", and "**On average, how many minutes do you spend using devices per transit trip?**" These questions are *multiple choice*, *check boxes* and *short numeric answer* which they help identify which devices people use, their activities, and usage duration. For example, if someone browses social media, they likely prefer smartphones for convenience, while gamers might choose tablets/laptops for better screens. The final question "**Can you describe your public transport experience?**" combined with the main questions helps determine if environment affects device use - like preferring smartphones in crowded spaces or using devices longer during extended trips.
+
+Here is the link lead to my [Google Form](https://docs.google.com/forms/d/e/1FAIpQLScEtk6j0sBBe_LRFoXEsQFFwg1Ali4DezhnJjP0QWnvXwn9jg/viewform?usp=dialog)
+
+
+### Code Analysis
+
+# Part One Device_Time_Summary
+The code below has drawn a plot about the device usage time of people taking public transport.
+
+- **Maximum** device usage time: `90 minutes`  
+- **Minimum** device usage time: `5 minutes`  
+- **Mean** device usage time: `36.67 minutes`
+
+```{r}
+
+#data invest
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQOjPOw3n8L5vjq-r1Zj-S99vxiabowqdXuuSkuKm9iI3AnErmjtghnNj8tOhQz0EiHg0RGjCwZQJ9G/pub?gid=1962745048&single=true&output=csv")
+latest_data <- logged_data %>%
+  rename(
+    timestamp = 1,            # First column - timestamp of response
+    headphone = 3,            # Third column - headphone usage
+    device_use = 4,           # Fourth column - types of devices used
+    primart_activity = 5,     # Fifth column - primary activities on devices
+    time_spend = 6,           # Sixth column - time spent using devices (minutes)
+    experience = 7            # Seventh column - qualitative experience
+  )
+
+#PLOT ONE
+# Create a bar plot showing distribution of device usage times
+latest_data %>%
+  ggplot() + 
+  geom_bar(aes(y = time_spend, fill = "#ff0000")) +
+  labs(title = "Time Spend on Devices",   #plot title
+       y = "Time Spent (minutes)",        #Y-axies lable
+       x = "Count of Observations") +     #X-axies lable
+  theme(
+    panel.background = element_rect(fill = "grey90"),  #color grey panel background
+    plot.background = element_rect(fill = "white"),    #color white plot background
+    panel.grid.major = element_line(color = "white"),  #color white major gridlines
+    panel.grid.minor = element_blank(),                #no minor gridlines 
+  )
+plot.title = element_text(
+  size = 16,  # Title font size
+  margin = margin(b = 15)  # Bottom margin of title
+  )
+
+
+#STATMENT ONE AND SUMMARY VALUES
+#summary for time_spend on device when taking transport
+#calculate key statistics for device usage time
+
+max_transport_devices_time = max(latest_data$time_spend, na.rm = TRUE)
+min_transport_devices_time = min(latest_data$time_spend, na.rm = TRUE)
+mean_transport_devices_time = mean(latest_data$time_spend, na.rm = TRUE)
+
+#final summary for plot one
+#create a summary text string combining all statistics
+
+device_time_summary <- paste0(
+  "The maximum minutes of devices when taking transport is ", max_transport_devices_time, "minutes.",    
+  
+  "The minimun minutes of devices when taking transport is ", min_transport_devices_time, "minutes.",   
+  
+  "The mean minutes of devices when taking transport is ", mean_transport_devices_time, "minutes."
+  )
+
+#print as output
+device_time_summary
+
+```
+
+# Par Two Device_Use_summary
+The code below has drawn a plot about the device usage when people taking public transport.
+
+ - **Maximum** device usage: `Smartphone`  
+ - **Minimum** device usage: `Laptop` & `E-reader`
+
+```{r}
+#PLOT TWO
+#count all device exists times
+# Count frequency of each device type and prepare data frame
+
+device_counts <- table(latest_data$device_use) %>%  #create frequency table
+  as.data.frame() %>%                               #convert to data frame
+  rename(device_use = Var1, count = Freq) %>%       #rename column
+  arrange(desc(count))                              #sort(for duplicate output)
+
+# Create bar plot of device usage distribution
+
+latest_data %>%
+  ggplot() + 
+  geom_bar(aes(x = fct_infreq(device_use), fill = "#ff0000")) +
+  labs(title = "Device Usage Distribution",
+       x = "Device Type",   # X-axis label (device categories)
+       y = "Count") +       # Y-axis label (frequency count)
+  theme(
+    panel.background = element_rect(fill = "grey90"),   # Light gray background
+    plot.background = element_rect(fill = "white"),     # White plot background
+    panel.grid.major = element_line(color = "white"),   # White major gridlines
+    panel.grid.minor = element_blank(),    # No minor gridlines
+  )
+plot.title = element_text(
+  size = 16,
+  margin = margin(b = 15)
+)
+
+# find the max used device and the miminum used device.
+most_used <- device_counts %>%     #filter for the max value
+  filter(count == max(count)) %>%  
+  pull(device_use) %>% 
+  as.character() #convert to char
+
+least_used <- device_counts %>%    #filter for the mini value
+  filter(count == min(count)) %>% 
+  pull(device_use) %>% 
+  as.character() # convert to char
+
+# final summary for plot two
+device_use_summary <- paste0(
+  "Most used device: ", most_used, " (", max(device_counts$count), " uses), ",
+  
+  "Least used device: ", least_used, " (", min(device_counts$count), " uses)"
+)
+
+#print as output
+device_use_summary
+```
+
+
